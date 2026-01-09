@@ -18,6 +18,7 @@ A professional, free-to-use letterhead generator built with Next.js. Create, pre
 - **Framework:** Next.js 15 (App Router)
 - **Styling:** Tailwind CSS
 - **Components:** shadcn/ui
+- **Database:** Prisma with SQLite
 - **PDF Generation:** html2canvas + jsPDF
 
 ---
@@ -42,7 +43,21 @@ Follow these steps to run the project on your local machine:
     npm install
     ```
 
-3.  **Run the development server:**
+3.  **Environment Setup:**
+    Create a `.env` file in the root directory and add the following:
+    ```env
+    DATABASE_URL="file:./dev.db"
+    ADMIN_USERNAME="your_admin_username"
+    ADMIN_PASSWORD_HASH="your_bcrypt_hash"
+    JWT_SECRET="your_jwt_secret"
+    ```
+
+4.  **Database Setup:**
+    ```bash
+    npx prisma migrate dev
+    ```
+
+5.  **Run the development server:**
     ```bash
     npm run dev
     ```

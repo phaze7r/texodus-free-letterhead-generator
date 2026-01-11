@@ -61,7 +61,7 @@ export function LetterForm({ details, setDetails, signature, setSignature, handl
       </CardHeader>
       <CardContent className="px-0">
             <div className="space-y-6">
-                <div className="space-y-4 p-4 border rounded-lg">
+                <div className="space-y-6 p-4 border rounded-lg">
                     <h3 className="font-medium">Company Details</h3>
                     <LogoUpload logo={details.companyLogo} setLogo={setLogo} />
                     <div className="space-y-2">

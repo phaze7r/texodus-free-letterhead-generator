@@ -23,19 +23,21 @@ export const LetterPreview = forwardRef<HTMLDivElement, LetterPreviewProps>(
           <div className="min-h-full flex flex-col p-6 md:p-12">
             {/* Header */}
             <header className="flex items-start justify-between pb-6 md:pb-8 border-b-2 border-primary gap-4">
-                <div className="flex items-center gap-6">
+                <div className="flex items-start gap-8">
                   {details.companyLogo && (
-                    <Image
-                      src={details.companyLogo}
-                      alt="Company Logo"
-                      width={100}
-                      height={100}
-                      className="object-contain"
-                    />
+                    <div className="flex-shrink-0">
+                      <Image
+                        src={details.companyLogo}
+                        alt="Company Logo"
+                        width={100}
+                        height={100}
+                        className="object-contain max-h-24 w-auto"
+                      />
+                    </div>
                   )}
-                  <div>
-                    <h2 className="font-sans text-3xl md:text-4xl font-bold text-slate-900">{details.companyName || "Your Company"}</h2>
-                    <p className="font-sans text-sm md:text-base text-slate-500 mt-1">{details.companyAddress || "123 Business Rd, Business City"}</p>
+                  <div className="flex flex-col justify-start">
+                    <h2 className="font-sans text-3xl md:text-4xl font-bold text-slate-900 leading-none">{details.companyName || "Your Company"}</h2>
+                    <p className="font-sans text-sm md:text-base text-slate-500 mt-3">{details.companyAddress || "123 Business Rd, Business City"}</p>
                   </div>
                 </div>
             </header>
